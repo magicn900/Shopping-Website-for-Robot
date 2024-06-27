@@ -43,9 +43,26 @@ async function startFacialRecognition() {
 
                 /* 人脸识别 */
                 // 人脸识别接口需先确定是否检测到人脸，若检测到则返回true，否则返回false
+                // 拍照
+                const canvas = document.getElementById('snapshotCanvas') || document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                // 设置canvas的大小与video相同，以确保截图质量
+                canvas.width = video.offsetWidth;
+                canvas.height = video.offsetHeight;
+                // 拍照并转换为DataURL
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const imageDataUrl = canvas.toDataURL('image/png');
+                // 使用LocalStorage保存图像数据
+                localStorage.setItem('userAvatar', imageDataUrl);
+
+
                 // 后需要确定数据库中是否存在用户，若存在则返回用户id，否则返回null
 
-                // 此处为检测到人脸，但数据库中不存在用户的情况
+
+
+                /* 此处为检测到人脸，但数据库中不存在用户的情况 */
+                
+
                 // 等待两秒
                 setTimeout(() => {
                     // 眼睛放大至白色瞳孔区域覆盖整个屏幕，随后跳转至注册界面

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+        <script src="JS/jquery-3.5.1.min.js"></script>
+        <script src="JS/multislider.min.js"></script>
+        <title>webstore</title>
+    </head>
+
+    <body>
+        <nav>
+            <div class="navbar-top">
+                <div>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="cart-account-box">
+                    <div class="navbar" id="navbar">
+                        <div class="searchbar">
+                            <form action="#">
+                                <input type="search" placeholder="type to search" />
+                                <i class="fa fa-search" id="search-icon"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="account">
+                        <a href="index.html">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                    </div>
+                    <div class="shopping-cart">
+                        <div class="sum-prices">
+                            <i
+                                class="fas fa-shopping-cart shoppingCartButton"
+                            ></i>
+                            <h6 id="sum-prices"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="producstOnCart hide">
+                <div class="overlay"></div>
+                <div class="top">
+                    <button id="closeButton">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                    <h3>Cart</h3>
+                </div>
+                <ul id="buyItems">
+                    <h4 class="empty">Your shopping cart is empty</h4>
+                </ul>
+                <button class="btn checkout hidden">Check out</button>
+            </div>
+        </nav>
+        <main class="detail-page product-under">
+            <h1 class="game-title-d productName">elden ring</h1>
+            <img class="game-pic-hidden product-image" src="images/elden-ring.png" alt="a picture of elden ring" />
+            <div class="breif-page-d">
+                <div class="pic">
+                    <div class="group-pic">
+                        <img class="one-pic" src="images/elden-ring/1.jpg" />
+                        <img class="one-pic" src="images/elden-ring/2.jpg" />
+                        <img class="one-pic" src="images/elden-ring/3.jpg" />
+                        <img class="one-pic" src="images/elden-ring/4.jpg" />
+                        <img class="one-pic" src="images/elden-ring/5.jpg" />
+                        <img class="one-pic" src="images/elden-ring/6.jpg" />
+                    </div>
+                </div>
+                <div class="breif-info-d">
+                    <img class="game-pic-d" src="images/elden-ring/1.jpg" />
+                    <p class="breif-info-d">THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</p>
+                    <p class="review-d">reviews: very positive</p>
+                    <p class="release-d">release date: 25 Feb, 2022</p>
+                    <p class="developer-d">developer: FromSoftware Inc.</p>
+                    <p class="tag-list-d">Popular user-defined tags for this product:</p>
+                    <p>Souls-like Dark Fantasy Open World</p>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="buy-addcart">
+                        <p class="buy">Buy Elden Ring</p>
+                        <p class="final-price-d priceValue">149</p>
+                        <p class="cny">CNY</p>
+                        <button class="add-to-cart-d addToCart" data-product-id="1">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <h2 class="undeline-title">about this game</h2>
+            <div class="mask">
+                <video class="video" muted autoplay="autoplay" loop="loop">
+                    <source src="images/elden-ring/v1.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="about-this-game">
+                <p>THE NEW FANTASY ACTION RPG.</p>
+                <p>Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</p>
+                <h3>A Vast World Full of Excitement</h3>
+                <p>A vast world where open fields with a variety of situations and huge dungeons with complex and three-dimensional designs are seamlessly connected. 
+                    As you explore, the joy of discovering unknown and overwhelming threats await you, leading to a high sense of accomplishment.</p>
+                <h3>Create your Own Character</h2>
+                <p>In addition to customizing the appearance of your character, you can freely combine the weapons, armor, and magic that you equip. 
+                    You can develop your character according to your play style, such as increasing your muscle strength to become a strong warrior, or mastering magic.</p>
+                <h3>An Epic Drama Born from a Myth</h3>
+                <p>A multilayered story told in fragments. An epic drama in which the various thoughts of the characters intersect in the Lands Between.</p>
+                <h3>Unique Online Play that Loosely Connects You to Others</h4>
+                <p>In addition to multiplayer, where you can directly connect with other players and travel together, the game supports a unique asynchronous online element that allows you to feel the presence of others.</p>
+                
+                <h2  class="undeline-title">MATURE CONTENT DESCRIPTION</h2>
+                <p>The developers describe the content like this:</p>
+                <p>This Game may contain content not appropriate for all ages, or may not be appropriate for viewing at work: Frequent Violence or Gore, General Mature Content</p>
+            </div>
+
+
+                
+            
+
+        </main>
+        <script src="JS/script.js"></script>
+        <script src="shopping-cart.js"></script>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+        <script src="JS/jquery-3.5.1.min.js"></script>
+        <script src="JS/multislider.min.js"></script>
+        <title>webstore</title>
+    </head>
+
+    <body>
+        <nav>
+            <div class="navbar-top">
+                <div>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="cart-account-box">
+                    <div class="navbar" id="navbar">
+                        <div class="searchbar">
+                            <form action="#">
+                                <input type="search" placeholder="type to search" />
+                                <i class="fa fa-search" id="search-icon"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="account">
+                        <a href="index.html">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                    </div>
+                    <div class="shopping-cart">
+                        <div class="sum-prices">
+                            <i
+                                class="fas fa-shopping-cart shoppingCartButton"
+                            ></i>
+                            <h6 id="sum-prices"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="producstOnCart hide">
+                <div class="overlay"></div>
+                <div class="top">
+                    <button id="closeButton">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                    <h3>Cart</h3>
+                </div>
+                <ul id="buyItems">
+                    <h4 class="empty">Your shopping cart is empty</h4>
+                </ul>
+                <button class="btn checkout hidden">Check out</button>
+            </div>
+        </nav>
+        <main>
+            <div class="game product-under">
+                <h2 class="game-title productName">elden ring</h2>
+                <p class="tag">HOT</p>
+                <div class="container">
+                    <img class="game-pic product-image" src="images/elden-ring.png" alt="a picture of elden ring" />
+                    <div class="intro">
+                        <div class="price">
+                            <div>
+                                <p class="final-price priceValue">149</p>
+                                <del class="orgin-price">298  CNY</del>
+                            </div>
+                            <p class="discount">-50%</p>
+                        </div>
+                        <p class="breif-info">THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</p>
+                        <a class="more-info" href='detail-1.html'> More details</a>
+                    </div>
+                    <div class="details">
+                        <p class="review">reviews: very positive</p>
+                        <p class="release">release date: 25 Feb, 2022</p>
+                        <p class="developer">developer: FromSoftware Inc.</p>
+                        <h3>Popular user-defined tags for this product:</h3>
+                        <ul class="tag-list">
+                            <li>Souls-like</li>
+                            <li>Dark Fantasy</li>
+                            <li>Open World</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="add-to-cart addToCart" data-product-id="1">add to cart</button>
+            </div>
+
+            <div class="game-container">
+                <div class="game-s product-under">
+                    <h2 class="game-title-s productName">baldur's gate</h2>
+                    <div class="container">
+                        <img class="game-pic-s product-image" src="images/baldur's-gate.png" alt="a picture of bg3" />
+                        <div class="intro-s">
+                            <div class="price-s">
+                                <div>
+                                    <p class="final-price-s priceValue">253</p>
+                                    <del class="orgin-price-s">298  CNY</del>
+                                </div>
+                                <p class="discount-s">-15%</p>
+                            </div>
+                            <p class="breif-info-s">baldur's gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.</p>
+                        </div>
+                        <div class="details">
+                            <p class="review-s">reviews: Overwhelmingly Positive</p>
+                            <p class="release-s">release date: 3 Aug, 2023</p>
+                            <p class="developer-s">developer: Larian Studios</p>
+                            <a class="more-info-s" href=#> More details</a>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-s addToCart" data-product-id="2">add to cart</button>
+                </div>
+                <div class="game-s product-under">
+                    <h2 class="game-title-s productName">Ratchet & Clank: Rift Apart</h2>
+                    <div class="container">
+                        <img class="game-pic-s product-image" src="images/Ratchet-Clank-Rift-Apart.png" alt="a picture of ratchent clank rift apart" />
+                        <div class="intro-s">
+                            <div class="price-s">
+                                <div>
+                                    <p class="final-price-s priceValue">248</p>
+                                    <del class="orgin-price-s">414  CNY</del>
+                                </div>
+                                <p class="discount-s">-40%</p>
+                            </div>
+                            <p class="breif-info-s">Blast your way through an interdimensional adventure with Ratchet and Clank now on PC! Help them take on an evil emperor from another reality as you jump between action-packed worlds and beyond at hyper-speed!</p>
+                        </div>
+                        <div class="details">
+                            <p class="review-s">reviews: very positive</p>
+                            <p class="release-s">release date: 26 Jul, 2023</p>
+                            <p class="developer-s">developer: Insomniac Games</p>
+                            <a class="more-info-s" href=#> More details</a>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-s addToCart" data-product-id="3">add to cart</button>
+                </div>
+            </div>
+            <div class="game-container">
+                <div class="game-s product-under">
+                    <h2 class="game-title-s productName">NieR Replicant™ ver.1.22474487139</h2>
+                    <div class="container">
+                        <img class="game-pic-s product-image" src="images/nier-replicant.png" alt="a picture of NieR Replicant" />
+                        <div class="intro-s">
+                            <div class="price-s">
+                                <div>
+                                    <p class="final-price-s priceValue">143</p>
+                                    <del class="orgin-price-s">359  CNY</del>
+                                </div>
+                                <p class="discount-s">-60%</p>
+                            </div>
+                            <p class="breif-info-s">The upgraded prequel of NieR:Automata. A kind young man sets out with Grimoire Weiss, a strange talking book, to search for the "Sealed verses" in order to save his sister Yonah, who fell terminally ill to the Black Scrawl.</p>
+                        </div>
+                        <div class="details">
+                            <p class="review-s">reviews: very positive</p>
+                            <p class="release-s">release date: 24 Apr, 2021</p>
+                            <p class="developer-s">developer: Square Enix</p>
+                            <a class="more-info-s" href=#> More details</a>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-s addToCart" data-product-id="4">add to cart</button>
+                </div>
+                <div class="game-s product-under">
+                    <h2 class="game-title-s productName">monster hunter rise</h2>
+                    <div class="container">
+                        <img class="game-pic-s product-image" src="images/monster-hunter-rise.png" alt="a picture of monster hunter rise" />
+                        <div class="intro-s">
+                            <div class="price-s">
+                                <div>
+                                    <p class="final-price-s priceValue">49</p>
+                                    <del class="orgin-price-s">198  CNY</del>
+                                </div>
+                                <p class="discount-s">-75%</p>
+                            </div>
+                            <p class="breif-info-s">Rise to the challenge and join the hunt! In Monster Hunter Rise, the latest installment in the award-winning and top-selling Monster Hunter series, you'll become a hunter.</p>
+                        </div>
+                        <div class="details">
+                            <p class="review-s">reviews: very positive</p>
+                            <p class="release-s">release date: 13 Jan, 2022</p>
+                            <p class="developer-s">developer: CAPCOM Co., Ltd.</p>
+                            <a class="more-info-s" href=#> More details</a>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-s addToCart" data-product-id="5">add to cart</button>
+                </div>
+            </div>
+        </main>
+        <script src="JS/script.js"></script>
+        <script src="shopping-cart.js"></script>
+    </body>
+</html>

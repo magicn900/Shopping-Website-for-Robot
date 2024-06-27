@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>购物车与奖励系统</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background-color: #f5f5f5; 
+  }
+  .header {
+    background-color: #e33333;
+    color: white;
+    padding: 10px 0;
+  }
+  .header .logo {
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .header .user-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    float: right;
+    padding: 10px;
+    font-weight: bold;
+  }
+  .cart-container { 
+    max-width: 800px; 
+    margin:auto; 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  .cart-item { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+  }
+  .cart-item img { 
+    width: 100px; 
+    height: 100px; 
+    margin-right: 20px; 
+  }
+  .cart-item-info { 
+    flex: 1; 
+  }
+  .cart-item-info h3 { 
+    margin: 0; 
+  }
+  .cart-item-quantity { 
+    margin: 0 10px; 
+  }
+  .cart-item-quantity input { 
+    width: 50px; 
+    text-align: center; 
+  }
+  .cart-total, .cart-reward { 
+    margin-top: 20px; 
+  }
+  .cart-total span, .cart-reward span { font-weight: bold; }
+  .cart-reward span { 
+    color: #f40; 
+  }
+  .checkout-button { 
+    padding: 10px; 
+    background-color: #e33333; 
+    color: #fff; 
+    text-align: center; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    font-size: 14px;
+  }
+  .return a{
+    float: right;
+    background-color: #e33333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: -35px;
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+<div class="header">
+    <div class="logo">XX购物商城</div>
+    <div class="user-nav">
+        <a href="#">首页</a>
+        <a href="#">退出登录</a>
+    </div>
+    <br>
+    <br>
+</div>
+<div id="app" class="cart-container">
+  <h2>我的购物车</h2>
+  <div v-for="item in cart" :key="item.id" class="cart-item">
+    <img :src="item.image" alt="商品图片">
+    <div class="cart-item-info">
+      <h3>物品名称</h3>
+      <p>价格: $</p>
+      <p class="cart-item-quantity">数量: <input type="number" v-model.number="item.quantity" min="1"></p>
+      <p class="cart-item-total">小计: $</p>
+    </div>
+    <button @click="removeItem(item.id)" class="delete-button">删除</button>
+  </div>
+  
+  <div class="cart-total">
+    <span>总计: $</span>
+  </div>
+  
+  <div class="cart-reward">
+    <span>奖励积分(折扣): </span>
+  </div>
+
+  <button @click="debouncedCheckout"
+   class="checkout-button">结算</button>
+   <div class="return">
+   <a href="#">返回</a>
+   </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      cart: [
+        { id: 1, name: '商品A', price: 10, quantity: 2, image: 'path/to/image1.jpg' ,type:'1'},
+        { id: 2, name: '商品B', price: 20, quantity: 1, image: 'path/to/image2.jpg' ,type:'2'},
+      ],
+      rewardPoints: 0,
+      checkoutDebounce: null,
+    },
+    computed: {
+      total() {
+        return this.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      },
+    },
+    methods: {
+      removeItem(itemId) {
+        const index = this.cart.findIndex(item => item.id === itemId);
+        if (index !== -1) {
+          this.cart.splice(index, 1);
+        }
+      },
+      checkout() {
+        let feedback = '结算成功! 您的奖励积分已更新。\n';
+        feedback += '商品种类及积分:\n';
+        this.cart.forEach(item => {
+          feedback += `- ${item.name} (${item.type}): ${this.getItemTotal(item)} x 1积分\n`;
+        });
+        alert(feedback);
+        this.rewardPoints += this.total; // 假设每消费1美元获得1积分
+        this.cart.forEach(item => item.quantity = 1); // 重置商品数量为最小购买数量
+      },
+      debouncedCheckout() {
+        clearTimeout(this.checkoutDebounce);
+        this.checkoutDebounce = setTimeout(() => this.checkout(), 500);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

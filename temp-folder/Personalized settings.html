@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个性化设置</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    background-color: #f8f9fa; /* 默认背景色 */
+    transition: font-size 0.3s;
+  }
+  .header {
+    background-color: #e33333;
+    color: white;
+    padding: 10px 0;
+  }
+  .header .logo {
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .header .user-nav {
+    float: right;
+    margin-right: 20px;
+  }
+  .header .user-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .customization-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+
+<body>
+    <!-- a内超链接改成购物首页 -->
+<div class="header">
+    <div class="logo">XX购物商城</div>
+    <div class="user-nav">
+        <a href="https://www.jd.com" target="_blank">返回首页</a>
+        <a href="http://127.0.0.1:5500/pi.html" target="_self">返回个人</a>
+        <a href="#">退出登录</a>
+    </div>
+    <br>
+    <br>
+</div>
+<div id="app">
+  <div class="customization-container">
+    <h2>个性化设置</h2>
+    <form @submit.prevent="updateSettings">
+      <div class="form-group">
+        <label for="themeColor">主题色:</label>
+        <select id="themeColor" v-model="settings.themeColor" class="form-control">
+          <option value="#f8f9fa">浅灰</option>
+          <option value="#007bff">蓝色</option>
+          <option value="#28a745">绿色</option>
+          <option value="#ff5722">橙色</option>
+          <option value="#6c757d">深灰</option>
+          <option value="#ff0000">红色</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fontSize">字体大小:</label>
+        <select id="fontSize" v-model="settings.fontSize" class="form-control">
+          <option value="12px">小</option>
+          <option value="14px">中</option>
+          <option value="16px">较大</option>
+          <option value="18px">大</option>
+          <option value="20px">超大</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="contrast">对比度:</label>
+        <input type="range" id="contrast" min="80" max="120" step="1" v-model="settings.contrast" class="form-control">
+      </div>
+      <button type="submit" class="form-button">应用设置</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      settings: {
+        themeColor: '#f8f9fa', // 默认主题色
+        fontSize: '14px',
+        contrast: 100 // 默认对比度为100%，即正常对比度
+      }
+    },
+    methods: {
+      updateSettings() {
+        // 更新背景色和字体大小
+        document.body.style.backgroundColor = this.settings.themeColor;
+        document.body.style.fontSize = this.settings.fontSize;
+        
+        // 计算对比度值
+        const contrastValue = this.settings.contrast / 100;
+        
+        // 更新body的filter样式
+        document.body.style.filter = `contrast(${contrastValue})`;
+      }
+    },
+    mounted() {
+      // 初始化页面时应用设置
+      this.updateSettings();
+    }
+  });
+</script>
+</body>
+</html>

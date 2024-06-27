@@ -14,7 +14,7 @@
         }
 
         .register-form {
-            background: red;
+            background: rgb(149, 31, 39);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             padding: 40px;
             width: 90%;
@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="register-form">
-        <form>
+        <form id="registrationForm">
             <div class="photo-container">
                 <img src="Resource/拍照结果.jpg" alt="刚刚拍摄的照片"><!-- 100 x 100 -->
             </div>
@@ -85,7 +85,7 @@
             <br>
             <p style="font-size: 20px;font-weight: bold;">注册后可进行虚拟购物体验！</p>
             <div class="input-group">
-                <input type="text" placeholder="起个昵称吧" required>
+                <input type="text" placeholder="起个昵称吧" required id="username">
             </div>
             <button type="submit">注册</button>
         </form>

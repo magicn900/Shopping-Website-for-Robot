@@ -53,7 +53,7 @@ async function startFacialRecognition() {
                     pupil.removeEventListener('animationend', startBlinking);
                     eye.style.transform = 'translate(-50%, -50%) scale(25)'; // 调整位置和缩放
                     setTimeout(() => {
-                        window.location.href = 'register.html'; // 跳转至注册界面
+                        window.location.href = '../register.html'; // 跳转至注册界面
                     }, 1000); // 1秒后跳转
                 }, 2000); 
                 

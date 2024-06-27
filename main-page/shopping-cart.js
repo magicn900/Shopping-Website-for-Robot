@@ -101,3 +101,9 @@ parentElement.addEventListener('click', (e) => { // Last
 });
 
 updateShoppingCartHTML();
+
+const checkout = document.querySelector('.checkout');
+
+checkout.addEventListener('click', function(){
+	window.location.href = 'checkout.html';
+});

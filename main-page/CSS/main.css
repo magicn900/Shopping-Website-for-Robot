@@ -484,7 +484,6 @@ ul .nav-links {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
     margin-bottom: 10px;
     position: relative;
 }
@@ -603,7 +602,7 @@ ul .nav-links {
 }
 
 .add-to-cart:hover {
-    background-color: #fff;
+    background-color: #fff !important;
     color: #000000;
 }
 
@@ -713,7 +712,7 @@ ul .nav-links {
 }
 
 .add-to-cart-s:hover {
-    background-color: #fff;
+    background-color: #fff !important;
     color: #000000;
 }
 
@@ -882,7 +881,7 @@ ul .nav-links {
 
 
 /* detail page */
-.detail-page {
+.page {
     width: 1000px;
     height: auto;
     margin: 80px auto;
@@ -1000,7 +999,7 @@ ul .nav-links {
 }
 
 .add-to-cart-d:hover {
-    background-color: #fff;
+    background-color: #fff !important;
     color: #000;
     width: 200px;
 }
@@ -1055,4 +1054,147 @@ ul .nav-links {
     font-size: 25px;
     margin-top: 10px;
 }
+
+.checkout-title {
+    font-size: 40px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.checkout-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right, #000000, #fff);
+}
+
+.pay-btn {
+    width: 100%;
+    height: 50px;
+    border: 3px solid #000;
+    background-color: #000;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.pay-btn:hover {
+    background-color: #fff !important;
+    cursor: pointer;
+    color: #000;
+}
+
+.checkout-product {
+    display: flex;
+    height: 150px;
+    border-bottom: 3px solid #000;
+}
+
+.checkout-product img{
+    margin-right: 20px;
+}
+
+.checkout-product-name p{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.checkout-product-name {
+    flex-grow: 10;
+}
+
+.checkout-product-price {
+    margin-top: 100px;
+}
+
+.checkout-total-price {
+    text-align: right;
+}
+
+.profile {
+    margin-top: 50px;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 4px solid #000;
+    position: absolute;
+}
+
+.profile-info-2, .profile-info-1 {
+    margin-right: 100px;
+}
+
+.profile-info-2 p {
+    margin-top: 5px;
+}
+
+.profile-info-1 p {
+    margin-top: 5px;
+}
+
+.profile-tag {
+    background-color: #000;
+    top: -35px;
+}
+
+.setting {
+    margin-top: 400px;
+    width: 1000px;
+    border: 4px solid #000;
+    position: absolute;
+}
+
+.setting-title {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.setting-color{
+    display: flex;
+}
+
+.red, .blue, .black, .yellow {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    margin-left: 30px;
+}
+
+.red {
+    background-color: red;
+    margin-left: 50px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.black {
+    background-color: #000;
+}
+
+#Contrast-ratio {
+    margin: 20px;
+}
+
+.confirm {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    margin-left: 20px;
+    font-size: 15px;
+    width: 60px;
+}
+
 

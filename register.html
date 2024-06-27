@@ -98,6 +98,17 @@
             form.style.transform = 'translateY(0)';
         }, 500);
         });
+        var submitButton = document.querySelector('button');
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            var username = document.querySelector('#username').value;
+            if (username) {
+                alert('注册成功！');
+                window.location.href = 'main-page/index.html';
+            } else {
+                alert('请输入昵称！');
+            }
+        });
     </script>
 </body>
 </html>

@@ -52,7 +52,7 @@ var page = document.querySelector('.page');
 const colorChange = function(){
     if(setting.color == 'red'){
         var num = 255 - setting.value;
-        page.style.backgroundColor = `rgb(${num},${num},${num})` 
+        page.style.backgroundColor = `rgb(${num},${num},${num})` ;
         settings.style.borderColor = "#f00";
         profile.style.borderColor = "#f00";
         confirmBtn.style.borderColor = "#f00";

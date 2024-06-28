@@ -482,6 +482,7 @@ ul .nav-links {
 .game {
     border: 5px solid #000000;
     width: 1000px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -884,11 +885,12 @@ ul .nav-links {
 .page {
     width: 1000px;
     height: auto;
-    margin: 80px auto;
+    margin: 0px auto;
 }
 
 
 .game-title-d {
+    margin-top: 100px;
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
@@ -1056,6 +1058,7 @@ ul .nav-links {
 }
 
 .checkout-title {
+    margin-top: 100px;
     font-size: 40px;
     text-transform: uppercase;
     position: relative;
@@ -1115,7 +1118,7 @@ ul .nav-links {
 }
 
 .profile {
-    margin-top: 50px;
+    margin-top: 150px;
     width: 1000px;
     display: flex;
     align-items: center;
@@ -1195,6 +1198,11 @@ ul .nav-links {
     margin-left: 20px;
     font-size: 15px;
     width: 60px;
+}
+
+.confirm:hover {
+    background-color: #ffffff !important;
+    color: #000000;
 }
 
 

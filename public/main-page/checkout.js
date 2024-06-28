@@ -56,6 +56,6 @@ updateCheckout();
 
 const checkout = document.querySelector('.pay-btn');
 checkout.addEventListener('click', function(){
-	alert('unfinished')
+	window.location.href = '../PersonalPages/SettlementInterface.html';
 });
 
